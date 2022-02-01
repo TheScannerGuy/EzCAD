@@ -17,11 +17,12 @@ _Prerequisties:_
 In terminal (GitBash for Windows users):
 1. `git clone https://github.com/TheScannerGuy/EzCAD.git`
 2. `cd EzCAD/ezcad-ui`
-3. `ng build`
-4. `cd ~/EzCAD`
-5. `pip install -r requirements.txt`
-6. Now create a file called `.env` in the EzCAD directory
-7. Enter keys for `SECRET_KEY` and `DISCORD_CLIENT_SECRET`
+3. `npm install`
+4. `ng build`
+5. `cd ~/EzCAD`
+6. `pip install -r requirements.txt`
+7. Now create a file called `.env` in the EzCAD directory
+8. Enter keys for `SECRET_KEY` and `DISCORD_CLIENT_SECRET`
 
 Your `EzCAD/.env` file should look like this
 ```

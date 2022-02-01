@@ -3,6 +3,8 @@ Werkzeug==2.0.2
 setuptools==57.0.0
 python-dotenv==0.19.2
 flask-marshmallow==0.14.0
+marshmallow-sqlalchemy==0.27.0
 flask-discord==0.1.64
 Flask-SocketIO==5.1.1
 Flask-SQLAlchemy==2.5.1
+flask-restx==0.5.1
