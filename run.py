@@ -12,7 +12,7 @@ from app.main.models import UserModel
 
 from werkzeug.exceptions import NotFound
 
-app = create_app(debug=True)
+app = create_app(debug=True)  # Change to False in deployment
 
 IGNORE_PATHS = ['login']
 BUILD_PATH: str = "None"  # 'dist' folder needs full path
@@ -47,7 +47,7 @@ def root():
 
 @app.route('/login')
 def login():
-    return discord.create_session()
+    return discord.create_session(scope=['identify'])
 
 
 @app.route('/callback')
