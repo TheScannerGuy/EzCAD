@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "name": "Police",
+    "type": 0
+  },
+  {
+    "id": 2,
+    "name": "Fire/EMS",
+    "type": 1
+  },
+  {
+    "id": 3,
+    "name": "Dispatch",
+    "type": 2
+  },
+  {
+    "id": 4,
+    "name": "Civilian",
+    "type": 3
+  }
+]

@@ -1,0 +1,28 @@
+@use '@angular/material' as mat;
+@import 'styles/theme-helper.scss';
+
+
+@include mat.core();
+
+
+
+$app-dark-primary: mat.define-palette(mat.$green-palette, 700);
+$app-dark-accent: mat.define-palette(mat.$blue-grey-palette);
+$app-dark-warn: mat.define-palette(mat.$deep-orange-palette, 500);
+$background-color: #628cc9;
+
+$app-dark-theme: mat.define-dark-theme((
+  color: (
+    primary: $app-dark-primary,
+    accent: $app-dark-accent,
+    warn: $app-dark-warn,
+  )
+));
+
+$background: map-get($app-dark-theme, background);
+$background: map_merge($background, (background: $background-color));
+$theme: map_merge($app-dark-theme, (background: $background));
+
+
+
+@include mat.all-component-themes(modify-background($app-dark-theme, $app-dark-accent));

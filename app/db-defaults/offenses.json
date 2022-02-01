@@ -1,0 +1,14 @@
+[
+  {
+    "code": "1(01)",
+    "type": "Misdemeanor",
+    "description": "Robbery",
+    "fine": 1000
+  },
+  {
+    "code": "2(01)",
+    "type": "Misdemeanor",
+    "description": "Speeding",
+    "fine": 400
+  }
+]

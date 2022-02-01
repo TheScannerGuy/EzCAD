@@ -1,0 +1,17 @@
+<mat-card class="portal-container" *ngIf="current != null">
+    <h1>EzCAD Portal</h1>
+    <form #portalForm="ngForm" (ngSubmit)="onSubmit(portalForm.value)">
+        <mat-form-field appearance="standard">
+            <mat-select name="department" #department ngModel>
+                <mat-option *ngFor="let dept of current['departments']" [value]="dept.dept_id">{{dept.department.name}}</mat-option>
+            </mat-select>
+            <mat-label>Department</mat-label>
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="standard">
+            <input matInput placeholder="Unit ID" name="unit" #unit ngModel>
+        </mat-form-field>
+        <br>
+        <button mat-raised-button type="submit" color="primary" [disabled]="!portalForm.valid">Patrol</button>
+    </form>
+</mat-card>

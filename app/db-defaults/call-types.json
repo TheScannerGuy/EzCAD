@@ -1,0 +1,386 @@
+[
+  {
+    "type": "Incomplete 911 Wireline",
+    "code": "911"
+  },
+  {
+    "type": "Incomplete 911 Cell/Wireless",
+    "code": "911C"
+  },
+  {
+    "type": "Abandon Vehicle",
+    "code": "ABV"
+  },
+  {
+    "type": "Aircraft Incident",
+    "code": "AIR"
+  },
+  {
+    "type": "Alarm, Audible",
+    "code": "ALA"
+  },
+  {
+    "type": "Alarm, Other",
+    "code": "ALO"
+  },
+  {
+    "type": "Alarm, Panic",
+    "code": "ALP"
+  },
+  {
+    "type": "Alarm, Robbery/Hold Up",
+    "code": "ALR"
+  },
+  {
+    "type": "Alarm, Silent",
+    "code": "ALS"
+  },
+  {
+    "type": "Animal Complaint",
+    "code": "ANM"
+  },
+  {
+    "type": "Arson",
+    "code": "ARS"
+  },
+  {
+    "type": "Assault",
+    "code": "ASL"
+  },
+  {
+    "type": "Assault with Weapon",
+    "code": "ASLW"
+  },
+  {
+    "type": "Assist Fire Department",
+    "code": "AFD"
+  },
+  {
+    "type": "Assist Outside Agency",
+    "code": "AOA"
+  },
+  {
+    "type": "Assist Person",
+    "code": "ASP"
+  },
+  {
+    "type": "Attempt to Locate",
+    "code": "ATL"
+  },
+  {
+    "type": "Bomb Incidents",
+    "code": "BOM"
+  },
+  {
+    "type": "Burglary",
+    "code": "BURG"
+  },
+  {
+    "type": "Burglary Now/Just Occurred",
+    "code": "BURGN"
+  },
+  {
+    "type": "Civil Standby",
+    "code": "CIV"
+  },
+  {
+    "type": "Civil Enforcement",
+    "code": "CIVE"
+  },
+  {
+    "type": "Cover Officer Request",
+    "code": "COV1"
+  },
+  {
+    "type": "Cover Officer Request",
+    "code": "COV3"
+  },
+  {
+    "type": "Criminal Mischief",
+    "code": "CRM"
+  },
+  {
+    "type": "Criminal Mischief Now/Just Occurred",
+    "code": "CRMN"
+  },
+  {
+    "type": "Criminal Mischief Graffiti",
+    "code": "CRMG"
+  },
+  {
+    "type": "Dead Body",
+    "code": "DB"
+  },
+  {
+    "type": "Detail",
+    "code": "DETAIL"
+  },
+  {
+    "type": "Domestic Disturbance",
+    "code": "DOM"
+  },
+  {
+    "type": "Disturbance Fight",
+    "code": "DIS"
+  },
+  {
+    "type": "Disturbance W/Weapon",
+    "code": "DISW"
+  },
+  {
+    "type": "Drowning Incident",
+    "code": "DROWN"
+  },
+  {
+    "type": "Drunk Driver DUII",
+    "code": "DUI"
+  },
+  {
+    "type": "Escape / Walk Away",
+    "code": "ESC"
+  },
+  {
+    "type": "Extra Patrol",
+    "code": "EXP"
+  },
+  {
+    "type": "Firework",
+    "code": "FWK"
+  },
+  {
+    "type": "Follow Up / Additional Information",
+    "code": "FOLLOW"
+  },
+  {
+    "type": "Fraud Now or Just Occurred",
+    "code": "FRDN"
+  },
+  {
+    "type": "Fraud",
+    "code": "FRD"
+  },
+  {
+    "type": "Harassment",
+    "code": "HAR"
+  },
+  {
+    "type": "Hazard",
+    "code": "HAZ"
+  },
+  {
+    "type": "Home Visit",
+    "code": "HMV"
+  },
+  {
+    "type": "Hit and Run Injury / Just Occurred",
+    "code": "HRI"
+  },
+  {
+    "type": "Hit and Run",
+    "code": "HRN"
+  },
+  {
+    "type": "Area Information Only",
+    "code": "INFO"
+  },
+  {
+    "type": "Juvenile Problem",
+    "code": "JUV"
+  },
+  {
+    "type": "Kidnap",
+    "code": "KDN"
+  },
+  {
+    "type": "Littering / Dumping",
+    "code": "LTR"
+  },
+  {
+    "type": "Menacing Now / Just Occurred",
+    "code": "MNCN"
+  },
+  {
+    "type": "Menacing",
+    "code": "MNC"
+  },
+  {
+    "type": "Mental Subject",
+    "code": "MEN"
+  },
+  {
+    "type": "Mental",
+    "code": "MENT"
+  },
+  {
+    "type": "Missing Person",
+    "code": "MSP"
+  },
+  {
+    "type": "Marine Patrol / Watercraft Violation",
+    "code": "MRP"
+  },
+  {
+    "type": "Message",
+    "code": "MSG"
+  },
+  {
+    "type": "Motorist Assist",
+    "code": "MOA"
+  },
+  {
+    "type": "Noise Complaint",
+    "code": "NOI"
+  },
+  {
+    "type": "Ordinance Violation",
+    "code": "ORD"
+  },
+  {
+    "type": "Parking Complaint",
+    "code": "PRK"
+  },
+  {
+    "type": "Premise / Security Check",
+    "code": "PRM"
+  },
+  {
+    "type": "Found Property",
+    "code": "PROP"
+  },
+  {
+    "type": "Prowler",
+    "code": "PWL"
+  },
+  {
+    "type": "Pursuit",
+    "code": "PUR"
+  },
+  {
+    "type": "Recovered Stolen Vehicle",
+    "code": "RSV"
+  },
+  {
+    "type": "Robbery",
+    "code": "ROB"
+  },
+  {
+    "type": "Search & Rescue",
+    "code": "SAR"
+  },
+  {
+    "type": "Shots Fired/Heard",
+    "code": "SHOT"
+  },
+  {
+    "type": "Stolen Vehicle Now or Just Occurred",
+    "code": "STVN"
+  },
+  {
+    "type": "Stolen Vehicle",
+    "code": "STV"
+  },
+  {
+    "type": "Subject Stop",
+    "code": "SS"
+  },
+  {
+    "type": "Suspect Contact",
+    "code": "SPC"
+  },
+  {
+    "type": "Subject Stop",
+    "code": "SS"
+  },
+  {
+    "type": "Suspicious Circumstance/Activity",
+    "code": "SSC"
+  },
+  {
+    "type": "Suspicious Vehicle",
+    "code": "SSV"
+  },
+  {
+    "type": "Suspicious Person",
+    "code": "SSP"
+  },
+  {
+    "type": "Test (Internal Use Only)",
+    "code": "TEST"
+  },
+  {
+    "type": "Theft",
+    "code": "THF"
+  },
+  {
+    "type": "Theft Now or Just Occurred",
+    "code": "THFN"
+  },
+  {
+    "type": "Theft Shoplifter",
+    "code": "THS"
+  },
+  {
+    "type": "Theft From Vehicle",
+    "code": "THV"
+  },
+  {
+    "type": "Traffic Complaint",
+    "code": "TRF"
+  },
+  {
+    "type": "Traffic Detail",
+    "code": "TRD"
+  },
+  {
+    "type": "Traffic Stop",
+    "code": "TS"
+  },
+  {
+    "type": "Train Accident",
+    "code": "TRAIN"
+  },
+  {
+    "type": "Trespass",
+    "code": "TRP"
+  },
+  {
+    "type": "Traffic Accident, Injury",
+    "code": "TAI"
+  },
+  {
+    "type": "Traffic Accident, Unknown if Injury",
+    "code": "TAU"
+  },
+  {
+    "type": "Traffic Accident Non-Injury",
+    "code": "TAN"
+  },
+  {
+    "type": "Unwanted",
+    "code": "UNW"
+  },
+  {
+    "type": "Vice: Drugs",
+    "code": "VCD"
+  },
+  {
+    "type": "Vice: Prostitution",
+    "code": "VCP"
+  },
+  {
+    "type": "Violation of Restraining Oder",
+    "code": "VRO"
+  },
+  {
+    "type": "Warrant Service",
+    "code": "WSV"
+  },
+  {
+    "type": "Welfare Check",
+    "code": "WCK"
+  },
+  {
+    "type": "Prisoner Transport",
+    "code": "XPTC"
+  }
+]

@@ -1,0 +1,11 @@
+.toolbar-center { margin: 0 auto; }
+.status-buttons { 
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.status-buttons button {
+    margin-left: 10px;
+    margin-right: 10px;
+}

@@ -1,0 +1,8 @@
+Flask==2.0.2
+Werkzeug==2.0.2
+setuptools==57.0.0
+python-dotenv==0.19.2
+flask-marshmallow==0.14.0
+flask-discord==0.1.64
+Flask-SocketIO==5.1.1
+Flask-SQLAlchemy==2.5.1
