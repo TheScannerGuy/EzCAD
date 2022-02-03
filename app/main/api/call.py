@@ -12,15 +12,29 @@ api = Namespace('call')
 class CreateCall(Resource):
     def put(self):
         parser = reqparse.RequestParser()
-        parser.add_argument('typeCode', type=str)
+        parser.add_argument('type', type=int)
+        parser.add_argument('subTypeCode', type=str)
         parser.add_argument('postal', type=int)
         parser.add_argument('location', type=str)
         parser.add_argument('description', type=str)
         args = parser.parse_args()
 
-        call = create_call(args["typeCode"], args["postal"], args["location"], args["description"])
+        call = create_call(args["type"], args["subTypeCode"], args["postal"],
+                           args["location"], args["description"])
 
         return CallSchema().dump(call)
+
+
+@api.route('/delete/<string:call_id>')
+@api.response(404, 'Call does not exist')
+class DeleteCall(Resource):
+    def delete(self, call_id):
+        call = next((i for i in calls if i.callId == call_id), None)
+        if call is None:
+            raise NotFound
+
+        calls.pop(call)
+        del call
 
 
 @api.route('/types')
@@ -46,3 +60,4 @@ class CurrentCall(Resource):
 class AllCalls(Resource):
     def get(self):
         return CallSchema(many=True).dump(calls)
+

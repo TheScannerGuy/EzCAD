@@ -1,6 +1,6 @@
 <mdt></mdt>
 
-<mat-card>
+<mat-card class="unit-call-wrapper">
     <mat-card-title>Current Call</mat-card-title>
-    
+    <pre class="result-block" *ngIf="current.currentCall != null">{{ current.currentCall | json }}</pre>
 </mat-card>

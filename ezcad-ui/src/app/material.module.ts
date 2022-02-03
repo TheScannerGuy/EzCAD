@@ -28,17 +28,13 @@ import { MatTabsModule } from '@angular/material/tabs';
 @NgModule( {
     imports: [
         CommonModule,
-        MatCheckboxModule,
-        MatCheckboxModule,
         MatButtonModule,
         MatInputModule,
-        MatAutocompleteModule,
         MatFormFieldModule,
         MatSelectModule,
         MatSidenavModule,
         MatBadgeModule,
         MatToolbarModule,
-        MatExpansionModule,
         MatButtonToggleModule,
         MatChipsModule,
         MatIconModule,
@@ -47,11 +43,14 @@ import { MatTabsModule } from '@angular/material/tabs';
         MatSnackBarModule,
         MatTableModule,
         MatSortModule,
-        MatPaginatorModule
+        MatPaginatorModule,
+        MatExpansionModule,
 
     ],
     exports: [
         MatTabsModule,
+        MatCheckboxModule,
+        MatAutocompleteModule,
         MatButtonModule,
         MatToolbarModule,
         MatIconModule,

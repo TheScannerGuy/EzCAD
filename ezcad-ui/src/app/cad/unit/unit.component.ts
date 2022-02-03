@@ -11,9 +11,11 @@ export class UnitComponent implements OnInit {
   constructor(private api: ApiService) { }
 
   tencodes: any;
+  current: any;
 
   ngOnInit(): void {
     this.api.getTenCodes().subscribe((response) => this.tencodes = response);
+    this.api.getCurrentUnit().subscribe((response) => this.current = response);
   }
 
 }

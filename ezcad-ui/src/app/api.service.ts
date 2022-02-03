@@ -212,6 +212,11 @@ export class ApiService {
     return this.http.get('/api/unit/current', {observe: 'body', responseType: 'json'})
   }
 
+  changeUnitStatus(unitId: string, status: number) {
+    const params = new HttpParams().set('unitId', unitId);
+    return this.http.post(`/api/unit/status/${status}`, {observe: 'body', responseType: 'json'}, {params: params})
+  }
+
   /**
    * Get All Units
    * 
@@ -219,6 +224,14 @@ export class ApiService {
    */
   getAllUnits() {
     return this.http.get('/api/unit/all', {observe: 'body', responseType: 'json'})
+  }
+
+  /**
+   * Attatch unit to call
+   */
+  attachUnit(callId: string, unitId: string) {
+    const params = new HttpParams().set('unitId', unitId).set('callId', callId);
+    return this.http.post('/api/unit/attach', null, {params:params});
   }
 
   changeCurrentUnitStatus(statusId: number) {
@@ -229,10 +242,15 @@ export class ApiService {
     return this.http.get('/api/call/types', {observe: 'body', responseType: 'json'})
   }
 
-  createCall(typeCode: string, postal: number, location: string, description: string) {
-    return this.http.put('/api/call/create', 
+  getAllCalls() {
+    return this.http.get('/api/call/all', {observe: 'body', responseType: 'json'})
+  }
+
+  createCall(type: number, subTypeCode: string, postal: number, location: string, description: string) {
+    return this.http.put('/api/call/create', null,
       {params: new HttpParams()
-        .set('typeCode', typeCode)
+        .set('type', type)
+        .set('subTypeCode', subTypeCode)
         .set('postal', postal)
         .set('location', location)
         .set('description', description),
@@ -240,6 +258,9 @@ export class ApiService {
       }
     );
   }
+
+  deleteCall(callId: string) { return this.http.delete(`/api/call/delete/${callId}`); }
+
 
   
 }

@@ -1,6 +1,7 @@
 from .models import UserModel
 import sched, time
 from .. import discord
+from .models import *
 import datetime
 from random import randint
 
@@ -13,21 +14,32 @@ calls = []
 
 
 def random_id(prefix=None, digits: int = 8):
-    _id = randint(10**(digits-1), (10**digits)-1)
+    _id = randint(10 ** (digits - 1), (10 ** digits) - 1)
     if prefix is not None:
         return f'{prefix}-{_id}'
     return _id
 
 
 class Call(object):
-    def __init__(self, call_id, typeCode: str, postal: int, location: str, description: str):
-        self.call_id = call_id
-        self.typeCode = typeCode
+    def __init__(self, callId, callType: int, subTypeCode: str, postal: int, location: str, description: str):
+        self.callId = callId
+        self.callType = callType  # {0: 'Police', 1: 'Fire', 2: 'Medical')
+        self.subTypeCode = subTypeCode
+        self.subType = CallTypeModel.query.filter_by(code=subTypeCode).first().type
         self.postal = postal
         self.location = location
         self.description = description
 
-        self.units = []
+    @property
+    def units(self):
+        _l = []
+        for i in units:
+            if i.currentCall is None:
+                continue
+            if i.currentCall.callId == self.callId:
+                _l.append(i)
+
+        return _l
 
     def attach(self, unit_id: str):
         """ Attach unit to call """
@@ -46,6 +58,8 @@ class Unit(object):
         self.status = 0  # Initial status is 0 (End Tour)
         self.currentCall: Call = None
         self.log: list[tuple] = []  # [("log message", date)]
+
+        self.user: UserModel = UserModel.query.filter_by(discord_id=discord_id).first()
 
     def _timeout(self):
         """ Remove unit after 8 hours of no activity. """
@@ -72,10 +86,11 @@ def register_unit(unit_id: str, department_id: int):
     units.append(unit)
 
 
-def create_call(typeCode: str, postal: int, location: str, description: str):
+def create_call(type: int, subTypeCode: str, postal: int, location: str, description: str):
     callId = f'{date.strftime("%Y")}-{randint(10 ** 7, (10 ** 8) - 1)}'  # Year-12345678
 
-    call = Call(callId, typeCode, postal, location, description)
+    call = Call(callId=callId, callType=type, subTypeCode=subTypeCode, postal=postal,
+                location=location, description=description)
     calls.append(call)
 
     return call

@@ -35,8 +35,8 @@ def create_app(debug=False):
     app.config["DISCORD_CLIENT_SECRET"] = os.getenv("DISCORD_CLIENT_SECRET")
     app.config["DISCORD_REDIRECT_URI"] = "http://127.0.0.1:5000/callback"  # URL to your callback endpoint.
 
+    db.init_app(app)  # Flask-SQLAlchemy must be initialized before Flask-Marshmallow.
     ma.init_app(app)
-    db.init_app(app)
     socketio.init_app(app)
     discord.init_app(app)
 

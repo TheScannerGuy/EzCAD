@@ -4,16 +4,18 @@ from .models import *
 
 class UnitSchema(ma.Schema):
     class Meta:
-        fields = ("unit_id", "dept_id", "discord_id", "status", "currentCall")
+        fields = ("unit_id", "dept_id", "discord_id", "status", "user", "currentCall")
 
-    user = ma.Nested("UserSchema")
+    user = ma.Nested("UserSchema", exclude=["characters"])
+    currentCall = ma.Nested("CallSchema")
 
 
 class CallSchema(ma.Schema):
     class Meta:
-        fields = ("typeCode", "postal", "location", "description", "units")
+        fields = ("callId", "callType", "subTypeCode", "subType",
+                  "postal", "location", "description", "units")
 
-    units = ma.Nested("UnitSchema", many=True)
+    units = ma.Nested("UnitSchema", exclude=["currentCall"], many=True)
 
 
 class DepartmentSchema(ma.SQLAlchemyAutoSchema):

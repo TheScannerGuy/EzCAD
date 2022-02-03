@@ -15,4 +15,9 @@ export class CreateJobComponent implements OnInit {
     this.api.getCallTypes().subscribe((response) => this.callTypes = response);
   }
 
+  createCall(data: any) {
+    this.api.createCall(data.type, data["sub-type"], data.postal, data.location, data.description)
+    .subscribe();
+  }
+
 }

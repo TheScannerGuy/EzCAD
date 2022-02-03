@@ -15,7 +15,8 @@ import { AngularMaterialModule } from '../material.module';
   ],
   imports: [
     CommonModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    AngularMaterialModule
   ]
 })
 export class AdminModule { }

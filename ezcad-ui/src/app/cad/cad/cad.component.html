@@ -1,10 +1,12 @@
-<mat-toolbar>
-    <span class="toolbar-center">{{ current.unit_id }} ({{tencodes[current.status].code}})</span>
-</mat-toolbar>
-<div class="status-buttons">
-    <button mat-raised-button *ngFor="let tencode of tencodes" color="primary"
-    [disabled]="disabledButtons[tencode.id]" (click)="changeStatus(tencode.id)">
-        {{tencode.code}}
-    </button>
+<div *ngIf="(current != null) && (tencodes != null)">
+    <mat-toolbar>
+        <span class="toolbar-center">{{ current.unit_id }} ({{tencodes[current.status].code}})</span>
+    </mat-toolbar>
+    <div class="status-buttons">
+        <button mat-raised-button *ngFor="let tencode of tencodes" color="primary"
+        [disabled]="disabledButtons[tencode.id]" (click)="changeStatus(tencode.id)">
+            {{tencode.code}}
+        </button>
+    </div>
+    <router-outlet></router-outlet>
 </div>
-<router-outlet></router-outlet>

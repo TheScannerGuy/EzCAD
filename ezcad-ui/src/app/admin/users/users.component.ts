@@ -11,8 +11,11 @@ import { last, lastValueFrom } from 'rxjs';
 export class UsersComponent implements OnInit {
   constructor(private api: ApiService) { }
 
+  users: any;
+  userTableCols: string[] = ['username', 'id', 'admin', 'suspended', 'details'];
 
   ngOnInit(): void {
+    this.api.getAllUsers().subscribe((response) => this.users = response);
   }
 
 }

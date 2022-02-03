@@ -3,29 +3,43 @@
     <mat-tab-group>
         <!-- Create Call-->
         <mat-tab label="Call">
-            <mat-form-field appearance="standard">
-                <mat-label>Call Type</mat-label>
-                <mat-select #callType required>
-                    <mat-option [value]=1>Police</mat-option>
-                    <mat-option [value]=1>Fire</mat-option>
-                    <mat-option [value]=2>Medical</mat-option>
-                </mat-select>
-            </mat-form-field>
-            <br>
-            <mat-form-field appearance="standard">
-                <mat-label>Call Sub-Type</mat-label>
-                <mat-select #callSubType required>
-                    <mat-option *ngFor="let i of callTypes"
-                    [value]="i.code">{{i.type}}</mat-option>
-                </mat-select>
-            </mat-form-field>
-            <br>
-            <mat-form-field appearance="standard">
-                <mat-label>Description</mat-label>
-                <textarea matInput></textarea>
-            </mat-form-field>
-            <br>
-            <button mat-raised-button type="submit" color="primary">Create Call</button>
+            <form #callForm="ngForm" (ngSubmit)="createCall(callForm.value)" class="call-form">
+
+                <mat-form-field appearance="standard">
+                    <mat-label>Call Type</mat-label>
+                    <mat-select name="type" required ngModel>
+                        <mat-option [value]=0>Police</mat-option>
+                        <mat-option [value]=1>Fire</mat-option>
+                        <mat-option [value]=2>Medical</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <br>
+                <mat-form-field appearance="standard">
+                    <mat-label>Call Sub-Type</mat-label>
+                    <mat-select name="sub-type" required ngModel>
+                        <mat-option *ngFor="let i of callTypes"
+                        [value]="i.code">{{i.type}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <br>
+                <mat-form-field appearance="standard">
+                    <mat-label>Postal</mat-label>
+                    <input type="number" matInput name="postal" ngModel>
+                </mat-form-field>
+                <br>
+                <mat-form-field appearance="standard">
+                    <mat-label>Location</mat-label>
+                    <input type="text" matInput name="location" ngModel>
+                </mat-form-field>
+                <br>
+                <mat-form-field appearance="standard">
+                    <mat-label>Description</mat-label>
+                    <textarea matInput name="description" ngModel></textarea>
+                </mat-form-field>
+                <br>
+                <button mat-raised-button type="submit" color="primary" [disabled]="!callForm.valid">Create Call</button>
+    
+            </form>
         </mat-tab>
 
         <!-- Create BOLO -->

@@ -1,6 +1,5 @@
 .mdt-container {
     width: 730px;
-    height: 600px;
     display: table-cell;
 }
 .query-input {
@@ -11,14 +10,6 @@
 .clear-btn { margin-left: 20px; }
 .return {
     margin: 10px;
-}
-.result-block {
-    background-color: rgb(51, 51, 51);
-    color: white;
-    width: 500px;
-    height: 290px !important;
-    overflow-y: auto;
-    border-radius: 5px;
 }
 .result-table {
     margin: 10px;

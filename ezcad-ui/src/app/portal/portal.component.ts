@@ -26,7 +26,7 @@ export class PortalComponent implements OnInit {
           case 0:
             this.router.navigateByUrl('/cad/unit')
             break;
-          case 3:
+          case 2:
             this.router.navigateByUrl('/cad/dispatch');
             break;
         }

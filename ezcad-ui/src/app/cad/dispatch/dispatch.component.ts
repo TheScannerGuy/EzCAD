@@ -13,11 +13,28 @@ export class DispatchComponent implements OnInit {
 
   unitSource: any;
   unitTableCols: string[] = ['unitId', 'status', 'assignment']
+  callTableCols: string[] = ['icon', 'sub-type', 'location', 'modify', 'delete']
   tencodes: any;
+  calls: any;
+  callIcons: any = {0: "local_police", 1: "local_fire_department", 3: "medical_services"}
 
   ngOnInit(): void {
     this.api.getAllUnits().subscribe((response) => this.unitSource = response);
     this.api.getTenCodes().subscribe((response) => this.tencodes = response);
+    this.api.getAllCalls().subscribe((resposne) => this.calls = resposne);
+
+  }
+
+  changeStatus(unitId: string, status: number) {
+    this.api.changeUnitStatus(unitId, status).subscribe();
+  }
+
+  attachUnit(unitId: string, callId: string) {
+    this.api.attachUnit(callId, unitId).subscribe();
+  }
+
+  deleteCall(callId: string) {
+    this.api.deleteCall(callId).subscribe();
   }
   
 }

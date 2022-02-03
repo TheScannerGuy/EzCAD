@@ -1,5 +1,3 @@
-
-
 :host, .wrapper { height: 100%; }
 app-root { display: inline-block; height: 100%; width: 100%; }
 html, body {
@@ -7,4 +5,12 @@ html, body {
     padding: 0;
     height: 100%;
     background-color: #424242;
+}
+.result-block {
+    background-color: rgb(51, 51, 51);
+    color: white;
+    width: 500px;
+    height: 290px !important;
+    overflow-y: auto;
+    border-radius: 5px;
 }
