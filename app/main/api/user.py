@@ -1,13 +1,9 @@
 from flask_restx import Namespace, Resource, reqparse
-from flask import request
+from flask_discord import Unauthorized
 from ... import discord
-from ..models import UserModel, CharacterModel
-from ..schemas import UserSchema, CharacterSchema, UserDepartmentModel, DepartmentModel
-from werkzeug.exceptions import (
-    NotFound,
-    BadRequest,
-    Conflict
-)
+from ..models import *
+from ..schemas import *
+from werkzeug.exceptions import *
 
 api = Namespace('user')
 

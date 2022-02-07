@@ -55,14 +55,15 @@ class UserModel(db.Model):
     characters = db.relationship('CharacterModel', back_populates='user')
 
     @classmethod
-    def register(cls, user: flask_discord_user):
+    def register(cls, user: flask_discord_user, admin=0):
         """ Add User to database. Should be called when during flask_discord callback if user is not in db """
 
         u = cls(discord_id=user.id, username=user.username, discriminator=user.discriminator,
-                avatar=user.avatar_hash, suspended=0, admin=0)
+                avatar=user.avatar_hash, suspended=0, admin=admin)
         db.session.add(u)
-
         db.session.commit()
+
+        return u
 
 
 class UserDepartmentModel(db.Model, BaseMixin):

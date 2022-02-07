@@ -1,6 +1,9 @@
+import bdb
 import functools
 import os.path
 import sys
+from dotenv import load_dotenv
+
 
 from app import create_app, discord
 from flask import Flask, redirect, send_from_directory, render_template, url_for
@@ -14,6 +17,7 @@ from app.main.models import UserModel
 from werkzeug.exceptions import NotFound
 
 app = create_app(debug=True)  # Change to False in deployment
+load_dotenv()
 
 IGNORE_PATHS = ['login']
 BUILD_PATH: str = "None"  # 'dist' folder needs full path
@@ -56,9 +60,13 @@ def callback():
     """ Discord Auth Callback """
     discord.callback()
     user = discord.fetch_user()
+    m_user = UserModel.query.filter_by(discord_id=str(user.id)).first()
 
-    if UserModel.query.filter_by(discord_id=str(user.id)).first() is None:
-        UserModel.register(user)
+    if m_user is None:
+        if int(os.getenv('ADMIN_DISCORD_ID')) == int(user.id):
+            UserModel.register(user, admin=1)
+        else:
+            UserModel.register(user)
 
     return redirect('/portal')
 
