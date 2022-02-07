@@ -1,5 +1,6 @@
 import functools
 import os.path
+import sys
 
 from app import create_app, discord
 from flask import Flask, redirect, send_from_directory, render_template, url_for
@@ -68,5 +69,9 @@ def redirect_unauthorized(e):
 
 
 if __name__ == "__main__":
-    BUILD_PATH = os.path.abspath(os.getcwd()) + '/dist'
-    app.run()
+    if sys.version_info[0] < 3 or sys.version_info[1] < 6:
+        PY_VERSION = str(sys.version_info[0]) + "." + str(sys.version_info[1])
+        print('ERROR: Invalid python version. Python 3.6 is required. Your are running: ', PY_VERSION)
+    else:
+        BUILD_PATH = os.path.abspath(os.getcwd()) + '/dist'
+        app.run()
