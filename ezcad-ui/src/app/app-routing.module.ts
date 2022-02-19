@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 
 import { PortalComponent } from './portal/portal.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { CharacterComponent } from './character/character.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/portal', pathMatch: 'full' },
@@ -21,6 +22,7 @@ const appRoutes: Routes = [
     loadChildren: () => import('./admin/admin.module')
     .then(m => m.AdminModule)
   },
+  { path: 'character', component: CharacterComponent },
 
   // 404 Page - Keep at bottom
   { path: '**', pathMatch: 'full', component: PageNotFoundComponent},
