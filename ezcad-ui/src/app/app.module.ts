@@ -14,12 +14,14 @@ import { AppComponent } from './app.component';
 import { PortalComponent } from './portal/portal.component';
 
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { CharacterComponent } from './character/character.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PortalComponent,
     PageNotFoundComponent,
+    CharacterComponent,
   ],
   imports: [
     AppRoutingModule,
