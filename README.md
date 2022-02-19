@@ -31,6 +31,9 @@ SECRET_KEY = "bits representing secret key"
 
 # Discord Secret Key
 DISCORD_CLIENT_SECRET = "discord oauth secret"
+
+# Discord ID of Admin
+ADMIN_DISCORD_ID = 123456789101112131415
 ```
 
 Get your DISCORD_CLIENT_SECRET from https://discord.com/developers/applications
