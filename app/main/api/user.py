@@ -67,6 +67,18 @@ class CurrentUser(Resource):
         return UserSchema().dump(user)
 
 
+@api.route('/current/characters')
+@api.response(404, 'User does not exist')
+class CurrentUserCharacters(Resource):
+    def get(self):
+        try:
+            user = UserModel.query.filter_by(discord_id=discord.fetch_user().id).first()
+        except Exception as e:
+            raise NotFound
+        if user is None:
+            raise NotFound
+        return CharacterSchema(many=True).dump(user.characters)
+
 @api.route('/<int:discordId>/delete')
 @api.response(404, 'User does not exist')
 class DeleteUser(Resource):
