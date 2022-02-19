@@ -1,0 +1,13 @@
+<div *ngIf="allCharacters">
+    <h2 mat-dialog-title>Select Character</h2>
+    <mat-dialog-content class="mat-typography">
+
+        <div class="character-list">
+            <div class="character-list-item" *ngFor="let c of allCharacters">
+                <button mat-raised-button>{{c.first_name}} {{c.last_name}}</button>
+                <button mat-raised-button color="warn">Delete</button>
+            </div>
+        </div>
+
+    </mat-dialog-content>
+</div>
