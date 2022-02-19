@@ -23,7 +23,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTabsModule } from '@angular/material/tabs';
-
+import { MatListModule } from '@angular/material/list'; 
 
 @NgModule( {
     imports: [
@@ -45,7 +45,6 @@ import { MatTabsModule } from '@angular/material/tabs';
         MatSortModule,
         MatPaginatorModule,
         MatExpansionModule,
-
     ],
     exports: [
         MatTabsModule,
@@ -64,6 +63,7 @@ import { MatTabsModule } from '@angular/material/tabs';
         MatTableModule,
         MatPaginatorModule,
         MatCardModule,
+        MatListModule
     ]
 } )
 
