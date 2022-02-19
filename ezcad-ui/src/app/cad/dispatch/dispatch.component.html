@@ -6,7 +6,7 @@
 
     <div class="dispatch-tables">
     <!-- Unit Table -->
-    <table mat-table [dataSource]="unitSource" class="unit-table mat-elevation-z8">
+    <table mat-table [dataSource]="unitSource" class="unit-table mat-elevation-z8" *ngIf="unitSource">
 
         <!-- Unit ID Column -->
         <ng-container matColumnDef="unitId">
@@ -29,7 +29,7 @@
         <ng-container matColumnDef="assignment">
             <th mat-header-cell *matHeaderCellDef> Assignment </th>
             <td mat-cell *matCellDef="let unit">
-                <mat-select [(value)]="unit.currentCall" (selectionChange)="attachUnit(unit.unit_id, $event.value)">
+                <mat-select [(value)]="unit.currentCall.callId" (selectionChange)="attachUnit(unit.unit_id, $event.value)">
                     <mat-option value="null">None</mat-option>
                     <mat-option *ngFor="let c of calls" [value]="c.callId">{{c.subType}}</mat-option>
                 </mat-select>

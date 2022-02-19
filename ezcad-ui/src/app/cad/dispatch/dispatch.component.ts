@@ -19,7 +19,19 @@ export class DispatchComponent implements OnInit {
   callIcons: any = {0: "local_police", 1: "local_fire_department", 3: "medical_services"}
 
   ngOnInit(): void {
-    this.api.getAllUnits().subscribe((response) => this.unitSource = response);
+    this.api.getAllUnits().subscribe(
+      (response: any) => {
+        for (let i=0; i<=this.unitSource.length; i++) {
+          let unit = response[i];
+    
+          unit.currentCall.callId = unit.currentCall.callId || 'null';
+        }
+        this.unitSource = response
+        console.log('######');
+        console.log(this.unitSource);
+      } 
+    );
+
     this.api.getTenCodes().subscribe((response) => this.tencodes = response);
     this.api.getAllCalls().subscribe((resposne) => this.calls = resposne);
 
@@ -36,5 +48,5 @@ export class DispatchComponent implements OnInit {
   deleteCall(callId: string) {
     this.api.deleteCall(callId).subscribe();
   }
-  
+
 }
