@@ -171,3 +171,10 @@ class CiteCharacter(Resource):
             ArrestChargeModel.create(arrest_id=arrest_id, charge_code=i)
 
         return CharacterSchema().dump(character)
+
+
+@api.route('/all')
+class AllCharacters(Resource):
+    def get(self):
+        all_characters = CharacterModel.query.all()
+        return CharacterSchema(many=True).dump(all_characters)
