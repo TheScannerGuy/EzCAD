@@ -32,6 +32,10 @@ export class ApiService {
     return this.http.get('/api/user/current', {observe: 'body', responseType: 'json'});
   }
 
+  getCurrentUserCharacters() {
+    return this.http.get('/api/user/current/characters', {observe: 'body', responseType: 'json'});
+  }
+
   /**
    * Get user by Discord ID
    * 
@@ -161,6 +165,10 @@ export class ApiService {
    */
   getPersonById(characterId: number) {
     return this.http.get(`/api/character/${characterId}`, {observe: 'body', responseType: 'json'});
+  }
+
+  getAllCharacters() {
+    return this.http.get('/api/character/all', {observe: 'body', responseType: 'json'});
   }
 
   /**
